@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>TAXI! - Online Cab Booking Service</title>
+	<!-- CSS files -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" type="text/css" href="assets\css\homePage.css">
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
+
+	<link href="assets\img\favicon.png" rel="shortcut icon" type="image/png">
+	<link rel="stylesheet" type="text/css" href="assets\css\homePage.css">
+</head>
+
+
+<body>
+
+
+	<nav id="navv" class="navbar fixed-top navbar-expand navbar-light bg-light">
+	  <a class="navbar-brand" href="index.html"><i class="fas fa-taxi"></i><strong> TAXI!</strong></a>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="index.html#book-bg">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="index.html#features">Features</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="index.html#about">About</a>
+	      </li>
+	  </ul>
+	</div>
+	</nav>
+
+
+
+	
+	<div class="big-div" id="book-bg">
+		
+		<div id="title-holder" class="form-row">
+				<div class="col">
+					<div id="content">
+						<h1>Grab a Ride!</h1>
+						<h3>Rentals and Outstations. Your car. Your control.</h3>
+						<hr>
+						<button class="btn btn-outline-light btn-lg" id="get-started">Get Started ...<i class="fas fa-car-side"></i></button>
+					</div>
+				</div>
+		</div>
+
+
+
+
+	<div id="widget-holder" class="form-row passive-widget">
+		<div class="col"></div>
+
+		<div id="booking-widget" class="form-group col "><a name="booking-widget"></a>
+		
+		<div id="personal-details">
+				<div id="pd-tag">
+					Personal Details
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="text" name="firstname" pattern="[A-Za-z].{6,}" class="form-control" placeholder="First name" required>
+					</div>
+					<div class="form-group col">
+						<input type="text" name="lastname" pattern="[A-Za-z].{6,}" class="form-control" placeholder="Last name" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+					<input type="email" name="email" class="form-control" placeholder="name@example.com" required></div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<div class="input-group">
+				        <div class="input-group-prepend">
+				          <div class="input-group-text">+91</div>
+				        </div>
+						<input type="tel" name="telephone" pattern="[0-9]{10}" class="form-control" placeholder="Telephone" required>
+					</div>
+				</div>
+					<div class="form-group col">
+						<input type="text" name="city" pattern="[A-Za-z]" class="form-control" placeholder="City" required>
+					</div>
+				</div>
+		</div>
+
+
+		<div id="dateOfTrip">
+		<div class="row">
+			<div style="text-align: right;" class="form-group col-lg-4 col-sm-4">
+				Book for
+			</div>			
+			<div class="form-group col-lg-8 col-sm-8">
+				<div class="custom-control custom-checkbox">
+				  <input type="checkbox" class="custom-control-input" name="bookingDate" id="currentDate">
+				  <label class="custom-control-label" for="currentDate">Today (<span id="today"></span>)</label>
+				</div>
+
+			</div>
+		</div>
+	 	<div id="hidden-date-div" class="row">
+	 		<div style="text-align: right;" class="form-group col-lg-4 col-sm-4">
+				Date
+			</div>
+			<div class="col-lg-8 form-group col-sm-8">
+				<input type="date" class="form-control" name="rent-date" value="" required="">
+			</div>
+	 	</div>
+
+	 	<div id="ro-bar">
+			 	<div class="form-row">
+			 		<div class="col" style="text-align: center;"><button class="selected" id="rental-button">Rental</button></div>
+
+			 		<div class="col" style="text-align: center;"><button class="" id="outstation-button">Outstation</button></div>
+			 		
+			 	</div>
+		</div>
+
+	 	
+
+	</div>
+		
+		<div id="outstation" class="passive-widget">
+			 <form>
+			 	<div class="form-row">
+					<div class="form-group col">
+						<input type="text" name="from-location" class="form-control" placeholder="From" value="" required="">
+					</div>
+					<div class="form-group col">
+						<input type="text" name="to-location" class="form-control" placeholder="To" value="" required="">
+					</div>
+				</div>
+
+
+
+			<div class="form-row">
+				<div class="form-group col">
+					<div class="custom-control custom-switch">
+					  <input type="checkbox" class="custom-control-input" name="returnToggle" id="returnToggle">
+					  <label class="custom-control-label" for="returnToggle"> Return Trip</label>
+					</div>
+				</div>
+			</div>
+			
+			
+
+			<div id="hidden-days-div" class="passive-widget">
+				<div class="form-row">
+					<div class="input-group">
+						<input type="number" class="form-control" id="returnDays" name="noOfDays" placeholder="Eg. 2">
+						<div class="input-group-prepend">
+						   <div class="input-group-text">Day(s)</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			</form>
+
+		</div>
+
+		<div id="rental" class="">
+			 <form>
+
+			 <div class="form-row">
+				 <div class="form-group col">
+					<div class="custom-control custom-checkbox">
+					  <input type="checkbox" class="custom-control-input" name="delivery" id="homeDeliv">
+					  <label class="custom-control-label" for="homeDeliv"> Recieve cab to your home (Extra charges applicable).</label>
+					</div>
+				</div>
+			</div>
+			 	<div id="hidden-address-div" class="passive-widget">
+			 		
+			 		<div class="form-row">
+					<div class="form-group col">
+						<input type="text" name="doorNo" class="form-control" placeholder="Door No." value="" required="">
+					</div>
+					<div class="form-group col">
+						<input type="text" name="street" class="form-control" placeholder="Street Name" value="" required="">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="text" name="localityName" class="form-control" placeholder="Locality" value="">
+					</div>
+				</div>
+
+			 		
+			 	</div>
+			 </form>
+
+			 
+		</div>
+		
+		<div class="form-row">
+			<div class="form-group col">
+				<button name="detailsConfirm" class="form-control" id="book-now" class="btn btn-outline-primary">Book Now</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="col"></div>
+</div>
+
+</div>
+
+	<div class="container">
+		<div class="big-div" id="features"><a name="features"></a>
+			<h3 data-aos="zoom-in">Why Choose TAXI! ?</h3>
+			<hr>
+
+			<div class="row">
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://cms-web.olacabs.com/00000000368.jpg');"></div>
+				<div class="col-lg-8">
+					<h4>Cabs for Every Pocket</h4>
+					<p>From Sedans and SUVs to Luxury cars for special occasions, we have cabs to suit every pocket.</p>
+				</div>
+				</div>
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://cms-web.olacabs.com/00000000370.jpg');"></div>
+				<div class="col-lg-8">
+					<h4>Secure and Safer Rides</h4>
+					<p>Verified drivers, an emergency alert button, and live ride tracking are some of the features that we have in place to ensure you a safe travel experience.</p>
+				</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://cms-web.olacabs.com/00000000374.jpg');"></div>
+				<div class="col-lg-8">
+					<h4><strong>TAXI!</strong> Gold</h4>
+					<p>A membership program with Taxi! that lets you ride a Prime Sedan at Mini fares, book cabs without peak pricing and has zero wait time.</p>
+				</div>
+			</div>
+			<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://cms-web.olacabs.com/00000000371.jpg');"></div>
+				<div class="col-lg-8">
+					<h4>In-Cab Entertainment</h4>
+					<p>Play music, watch videos and a lot more with <strong>TAXI! Gold</strong>. Also stay connected even if you are travelling through poor network areas with our free wifi facility.</p>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://images.unsplash.com/photo-1502911679107-2b54f5c0292c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');"></div>
+				<div class="col-lg-8">
+					<h4>24x7 Roadside Assistance</h4>
+					<p>We have round-the-clock, pan India partners. Help is never far away from you.</p>
+				</div>
+			</div>
+
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://cms-web.olacabs.com/00000000372.jpg');"></div>
+				<div class="col-lg-8">
+					<h4>Cashless Rides</h4>
+					<p>Now go cashless and travel easy. Simply recharge your PayTM or PhonePe wallets to enjoy hassle free payments.</p>
+				</div>
+			</div>
+		</div>
+			<div class="row">
+				<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://images.unsplash.com/photo-1541348263662-e068662d82af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');"></div>
+				<div class="col-lg-8">
+					<h4>Go Anywhere</h4>
+					<p>Our cars have all-India permits. Just remember to pay state tolls and entry taxes.</p>
+				</div>
+			</div>
+
+			<div class="feat col-lg-6 row" data-aos="fade-up" style="margin: 0 auto;">
+				<div class="col-lg-4 pic" style="background-image: url('https://images.unsplash.com/photo-1489596162121-4a8e544d6de0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80');"></div>
+				<div class="col-lg-8">
+					<h4>Fuel Cost Included</h4>
+					<p>Don't worry about mileage! All fuel costs are included. If you refill fuel, we'll pay you back!</p>
+				</div>
+			</div>
+		</div>
+
+		</div>
+
+
+		<hr class="page-break">
+
+
+		<div class="big-div" id="about"><a name="crap"></a>
+			<h3 data-aos="zoom-in">About Us</h3>
+			<hr>
+
+			<div class="row">
+				<div id="about-img" class="col-lg-4" data-aos="slide-up"></div>
+				<div class="col-lg-8" id="about-text" data-aos="slide-up">
+					<h4>Our Mission</h4>
+					<p>To bring the best of the cab services to everyone's fingertips without any hassle.</p>
+					<br>
+					<h4>About <strong>TAXI!</strong></h4>
+					<p>TAXI! was an ambitious project created for the purpose of serving the citizens of India with the best possible online cab booking services that currently offers rentals and outstations. Its true goal is to create a portal for users to book cabs without any hassle faced in the common call-taxi and pre-paid taxi systems.</p>
+					<p>TAXI! is actually a project created by Computer Science and Engineering students at GITAM Institute of Technology that is needed to be submitted to the Web Technologies Laboratory as a case study. This is the honest reason why this website has been designed in its first place.</p>
+					<br>
+					<h4>Our Team</h4>
+					<table>
+						<tbody>
+							<tr>
+								<td>Hem Sai Avinash P.</td>
+								<td>1210316044</td>
+							</tr>
+							<tr>
+								<td>Naga Pramod D.</td>
+								<td>1210316011</td>
+							</tr>
+							<tr>
+								<td>Hari Chandana K.</td>
+								<td>1210316032</td>
+							</tr>
+							<tr>
+								<td>Pradeep Kumar S.</td>
+								<td>1210316056</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+<!-- JS files -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+	<script type="text/javascript" src="assets\js\homePage.js"></script>
+
+</body>
+</html>
